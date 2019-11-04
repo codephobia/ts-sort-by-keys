@@ -1,0 +1,51 @@
+<div class="app">
+    <h1>Sort By Keys</h1>
+
+    <h2>Sort by: city asc, last name asc, first name asc</h2>
+    <table>
+        <tbody>
+            <tr *ngFor="let person of unsortedPeople | sortByKeys:'city':'lastName':'firstName'">
+                <td>{{ person.firstName }}</td>
+                <td>{{ person.lastName }}</td>
+                <td>{{ person.city }}</td>
+                <td>{{ person.votes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Sort by: votes desc, last name asc, first name asc</h2>
+    <table>
+        <tbody>
+            <tr *ngFor="let person of unsortedPeople | sortByKeys:'-votes':'lastName':'firstName'">
+                <td>{{ person.firstName }}</td>
+                <td>{{ person.lastName }}</td>
+                <td>{{ person.city }}</td>
+                <td>{{ person.votes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Sort by: city desc, last name desc, first name desc</h2>
+    <table>
+        <tbody>
+            <tr *ngFor="let person of sortedPeople">
+                <td>{{ person.firstName }}</td>
+                <td>{{ person.lastName }}</td>
+                <td>{{ person.city }}</td>
+                <td>{{ person.votes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Sort by: votes desc, first name asc, last name asc</h2>
+    <table>
+        <tbody>
+            <tr *ngFor="let person of sortedPeopleFromObservable">
+                <td>{{ person.firstName }}</td>
+                <td>{{ person.lastName }}</td>
+                <td>{{ person.city }}</td>
+                <td>{{ person.votes }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
